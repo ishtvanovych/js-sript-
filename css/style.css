@@ -4,12 +4,14 @@
     --title-color: #212121;
     --description-color: #757575;
     --main-color: #FFFFFF;
+    --cubic: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body{
     font-family: 'Roboto', sans-serif;
       font-size: 14px; 
       letter-spacing: 0.03em;
+
       color: #212121;
 }
 
@@ -34,11 +36,15 @@ img{
 }
 
 .link:hover, .link:focus{
-    color: var(--accent-color)
+    color: var(--accent-color);
+
+    transition: var(--cubic);
 }
 
 .btn:hover, .btn:focus{ 
     background: #188CE8;
+
+    transition: var(--cubic);
 }
 
 .container{
@@ -163,6 +169,8 @@ img{
 .contact-link:hover,
 .contact-link:focus {
     color: var(--accent-color);
+
+    transition: var(--cubic);
 }
 
 .contacts-icon{
@@ -287,6 +295,7 @@ img{
 
 .features-list{
     display: flex;
+
     margin: 0px;  
 }
 
@@ -328,6 +337,7 @@ img{
 .works-list{
     display: flex;
     flex-wrap: wrap;
+
     padding: 0;
 
     gap: 30px;
@@ -343,10 +353,14 @@ img{
     left: 0;
 
     width: 100%;
+
     background-color: rgba(47, 48, 58, 0.8);
 }
 
 .overlay-text{
+    font-weight: 700;
+    font-size: 14px;
+
     text-align: center;
     text-transform: uppercase;
     
@@ -444,10 +458,12 @@ img{
 .socials-link:focus {
     color: var(--main-color);
     background: var(--accent-color);
+
+    transition: var(--cubic);
 }
 
 .socials-icon{
-    fill:currentColor
+    fill: currentColor;
 }
 
     /* portfolio */
@@ -492,6 +508,8 @@ img{
     background: var(--accent-color);
 
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+    transition: var(--cubic);
 }
 
 /* projects */
@@ -519,6 +537,8 @@ img{
 .projects-item:focus,
 .projects-item:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+    transition: var(--cubic);
 }
 
 .projects-item:nth-child(3n) {
@@ -533,6 +553,7 @@ img{
     position: relative;
     overflow: hidden;
 }
+
 .overlay-projects{
     position: absolute;
     display: inline;
@@ -540,12 +561,18 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-   transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    transform: translateY(100%);
+
+    transition: var(--cubic);
 }
+
 .projects-item:hover .overlay-projects {
     background: rgba(33, 150, 243, 0.9);
+
     transform: translateY(0);
+
+    transition: var(--cubic);
 
 }
 .overlay-transcription{
@@ -630,6 +657,8 @@ img{
 .clients-link:focus {
     border-color: var(--accent-color);
     color: var(--accent-color);
+
+    transition: var(--cubic);
 }
 
 .clients-icon{
@@ -659,6 +688,7 @@ img{
     letter-spacing: 0.03em;
 
     display: block;
+
     margin-bottom: 20px;
 }
 
@@ -739,6 +769,8 @@ img{
 .join-link:focus {
     color: var(--main-color);
     background: var(--accent-color);
+
+    transition: var(--cubic);
 }
 
 .join-icon{
@@ -761,10 +793,10 @@ img{
     visibility: visible;
     pointer-events: initial; 
 
-    transition: opasity 250ms linear, visibility 250ms linear;
+    transition: opacity 250ms linear, visibility 250ms linear;
 }
 
-.backdrop.is-hidden {
+.backdrop.is-hidden{
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
@@ -781,11 +813,12 @@ pointer-events: none;
 
     background: var(--main-color);
     border-radius: 4px;
+
     transition: transform 250ms ease-in-out;
 }
 
 .backdrop.is-hidden .modal{
-    transform: translateX(-50%) translateX(-65%);
+    transform: translateX(-50%) translateY(-65%);  
 }
 
 .close{
@@ -800,12 +833,10 @@ pointer-events: none;
     width: 30px;
     height: 30px;
     padding: 0;
-    
 
     border-radius: 50%;
     border:  1px solid rgba(0, 0, 0, 0.1);
     background: transparent;
-
 
     cursor: pointer;
 
